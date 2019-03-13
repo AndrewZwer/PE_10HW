@@ -29,11 +29,18 @@
     margin: 0 32px;
 }
 
+.full-w-img {
+    display: block;
+}
+
+img {
+    width: 100%;
+}
+
 /* text block */
 
 .grey-bg {
     background-color: #f5f6f7;
-    margin-top: -4px;
 }
 
 .grey-bg .wrapper {
