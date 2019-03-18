@@ -147,17 +147,19 @@ a {
 
 /* footer menu */
 
-.footer-menu .menu-item { display: inline-block; }
+.footer-menu .menu-item {
+  display: inline-block;
+  padding: 20px 7px;
+}
 
 .footer-menu .menu-link {
   display: inherit;
   font-size: 28px;
-  padding: 20px 7px;
 }
 
 .footer-menu .menu-link:hover {
   color: #3181a6;
-  text-decoration: underline;
+  border-bottom: 1px solid #3181a6;
 }
 
   /* copyright */
