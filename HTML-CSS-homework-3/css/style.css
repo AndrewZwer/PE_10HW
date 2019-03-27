@@ -1,0 +1,176 @@
+/* add font Verdana to project */
+
+@font-face {
+  font-family: "Verdana";
+  src: url("../fonts/Verdana.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/* Width limitation for all page and positioned
+content in the middle of the page */
+
+.wrapper {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+p, a {
+  color: #fff;
+  font-family: Verdana, "sans-serif";
+}
+
+/*backgroung image for whole <body> */
+
+.image-bg {
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.floated { float: left; }
+
+
+/*** HEADER ***/
+
+.header { padding: 49px 30px; }
+
+.blocked {
+  display: block;
+  position: relative;
+}
+
+.logo:hover .logo-text { color: #f26522; }
+
+.logo .display-hover {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+}
+
+.logo:hover .display-hover { opacity: 1; }
+
+.logo:hover .display-normal { opacity: 0;  }
+
+.logo-text {
+  text-transform: uppercase;
+  font-size: 29px;
+  font-weight: 700;
+  padding-left: 15px;
+}
+
+.enothet-line {
+  display: block;
+  font-size: 18px;
+}
+
+/* contact block */
+
+.contacts {
+  float: right;
+  text-align: right;
+  font-size: 18px;
+}
+
+.clear-fix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*** MAIN CONTENT ***/
+
+.colomn {
+  width: 33.33333%;
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.gallery-link:hover .gallery-text { color: #f26522; }
+
+.gallery-text {
+  display: inline-block;
+  font-size: 18px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+.gallery:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.gallery-item {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(45deg, #1021f3, #00ff43);
+}
+
+.border-img { border: 4px solid transparent; }
+
+/*block with price that appear while
+mouse hover on gallery item */
+
+.hover-block {
+  width: 265px;
+  background-color: #f26522;
+  padding: 17px 21px;
+  position: absolute;
+  bottom: -62px;
+  left: 4px;
+  opacity: 0;
+}
+
+.price,
+.details {
+  display: inline-block;
+  width: 50%;
+}
+
+.price { text-align: left; }
+
+.details { text-align: right; }
+
+.price-text { font-size: 10px; }
+
+.euro-price { font-size: 20px; }
+
+.details-link { font-size: 14px; }
+
+.details-link:after {
+  content: "  >";
+  opacity: 0.5;
+}
+
+/* animation */
+
+.gallery-link:hover .hover-block,
+.gallery-link:hover .gallery-text,
+.logo:hover .logo-text,
+.logo:hover .display-hover,
+.logo:hover .display-normal {
+          transition: all .5s ease-in-out;
+       -o-transition: all .5s ease-in-out;
+     -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+}
+
+.gallery-link:hover .hover-block {
+          transform: translate(0,-66px);
+       -o-transform: translate(0,-66px);
+     -moz-transform: translate(0,-66px);
+  -webkit-transform: translate(0,-66px);
+  opacity: 1;
+}
+
+/*** FOOTER ***/
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+
+
