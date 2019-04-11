@@ -36,11 +36,7 @@ td:last-child, th:last-child { border-right: none; }
 
 .coolTable .first-col { width: 310px; }
 
-.header-text {
-  position: relative;
-  top: 25px;
-  font-size: 18px;
-}
+.header-text { font-size: 18px; }
 
 .large-header { font-size: 30px; }
 
@@ -93,7 +89,7 @@ td:last-child, th:last-child { border-right: none; }
 
 .light-grey-bg { background-color: #f2f2f2; }
 
-.coolTable .regular-text {
+.row-height {
   padding-top: 22px;
   padding-bottom: 23px;
 }
@@ -164,14 +160,13 @@ td:first-child { border-bottom: none; }
   padding-top: 5px;
 }
 
-.first-row-cell { width: 157px; }
-
-.first-row-cell .icon-text {
-  font-size: 20px;
+.first-row-cell {
+  width: 157px;
   padding-top: 27px;
   padding-bottom: 27px;
 }
 
+.first-row-cell .icon-text { font-size: 20px; }
 
 .anotherTable .far,
 .anotherTable .fas {
@@ -212,11 +207,6 @@ td:first-child { border-bottom: none; }
   cursor: pointer;
   outline: none;
   transition-duration: .5s;
-}
-
-.anotherTable .regular-text {
-  position: relative;
-  top: 51px;
 }
 
 .new-line {
