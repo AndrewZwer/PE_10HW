@@ -1,0 +1,225 @@
+/* add font Arial to project */
+
+@font-face {
+  font-family: "arial";
+  url("../fonts/ArialRegular.ttf") format('truetype');
+  src: url("../fonts/ArialRegular.eot");
+  src: url("../fonts/ArialRegular.eot?iefix") format('eot');
+  url("../fonts/ArialRegular.svg#webfont") format('svg');
+  url("../fonts/ArialRegular.woff") format('woff');
+  url("../fonts/ArialRegular.woff2") format('woff2');;
+  font-weight: normal;
+  font-style: normal;
+}
+
+p {
+  color: #484848;
+  font-family: arial, sans-serif;
+}
+
+.table {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #fafafa;
+  border-top: 24px solid #3a4965;
+  border-right: 30px solid #3a4965;
+  border-bottom: 32px solid #3a4965;
+  border-left: 22px solid #3a4965;
+}
+
+.coolTable td,
+.coolTable th {
+  border-right: 2px solid rgba(112, 112, 112, .2);
+}
+
+td:last-child, th:last-child { border-right: none; }
+
+.coolTable .first-col { width: 310px; }
+
+.header-text {
+  position: relative;
+  top: 25px;
+  font-size: 18px;
+}
+
+.large-header { font-size: 30px; }
+
+.white-color { color: #fff; }
+
+.coolTable .salad-bg {
+  width: 277px;
+  font-size: 24px;
+  padding-top: 24px;
+  padding-bottom: 22px;
+}
+
+.salad-bg { background-color: #89c331; }
+
+.coolTable .red-bg {
+  width: 279px;
+  font-size: 30px;
+}
+
+.red-bg { background-color: #f04a56; }
+
+.coolTable .green-bg {
+  width: 277px;
+  font-size: 24px;
+}
+
+.green-bg { background-color: #20807c; }
+
+.coolTable .large-price {
+  position: relative;
+  left: 15px;
+  font-size: 60px;
+  font-weight: 900;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.coolTable .sup-price {
+  font-size: 24px;
+  position: relative;
+  top: -5px;
+}
+
+.coolTable .sub-text {
+  position: relative;
+  left: -30px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.light-grey-bg { background-color: #f2f2f2; }
+
+.coolTable .regular-text {
+  padding-top: 22px;
+  padding-bottom: 23px;
+}
+
+.fas,
+.far {
+  color: #848484;
+}
+.coolTable .fas,
+.coolTable .far {
+  position: relative;
+  top: 2px;
+  padding-right: 10px;
+  font-size: 24px;
+}
+
+.dark-grey-bg { background-color: #e3e3e3; }
+
+.footer-darkest-bg { background-color: #ddd; }
+
+.footer .button {
+  width: 192px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 5px;
+  padding: 19px 44px 10px 44px;
+  margin-top: 32px;
+  margin-bottom: 29px;
+  cursor: pointer;
+  outline: none;
+  transition-duration: .5s ;
+}
+
+.button:hover { box-shadow: 0px 3px 18px 0 rgba(0,0,0,.5); }
+
+.dark-bg {
+  background-color: #484848;
+  border-bottom: 9px solid #404040;
+}
+
+.footer-dark-bg { background-color: #eee; }
+
+.button.salad-bg { border-bottom: 9px solid #79b027; }
+
+.footer-light-bg { background-color: #f4f4f4; }
+
+.button.red-bg { border-bottom: 9px solid #df3a46; }
+
+.button.green-bg { border-bottom: 9px solid #16736f; }
+
+
+ /*
+
+ ** ANOTHER TABLE **
+
+ */
+
+.anotherTable td { border-bottom: 2px solid rgba(112, 112, 112, .2); }
+
+td:first-child { border-bottom: none; }
+
+.first-cell { width: 198px; }
+
+.first-cell .large-header {
+  display: block;
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+.first-row-cell { width: 157px; }
+
+.first-row-cell .icon-text {
+  font-size: 20px;
+  padding-top: 27px;
+  padding-bottom: 27px;
+}
+
+
+.anotherTable .far,
+.anotherTable .fas {
+  padding-bottom: 10px;
+  font-size: 24px;
+}
+
+.anotherTable td:nth-child(2n) { background-color: #e3e3e3; }
+
+.anotherTable td:nth-child(2n+3) { background-color: #f2f2f2; }
+
+.first-col .large-price {
+  font-size: 36px;
+  color: #fff;
+}
+
+.first-col .sup-price { font-size: 18px; }
+
+.first-col .sub-text { font-size: 14px; }
+
+.first-col.salad-bg p.white-color,
+.first-col.red-bg p.white-color,
+.first-col.green-bg p.white-color {
+  padding-bottom: 17px;
+  padding-top: 15px;
+}
+
+.first-col .button {
+  margin-top: 24px;
+  margin-bottom: 18px;
+  border: none;
+  border-bottom: 5px solid #343434;
+  padding: 11px 34px 7px 34px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition-duration: .5s;
+}
+
+.anotherTable .regular-text {
+  position: relative;
+  top: 51px;
+}
+
+.new-line {
+  display: block;
+  margin-top: 7px;
+}
