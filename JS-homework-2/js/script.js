@@ -29,7 +29,7 @@ alert("Good work. Now, I want to ask you to enter two numbers, and console will 
 let firstNum = prompt("Enter a first number");
 let secondNum = prompt("and last number");
 
-while( firstNum > secondNum || check(firstNum) || check(secondNum) ) {
+while( Number(firstNum) > Number(secondNum) || check(firstNum) || check(secondNum) ) {
     alert("Maaaan, one of your numbers or both of them is incorect, be more attentive.");
     firstNum = prompt("One more attempt. First number isssss......");
     secondNum = prompt("And second number .......");
