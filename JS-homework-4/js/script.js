@@ -1,42 +1,46 @@
-function CreateNewUser() {
+function CreateNewUser(name, surname) {
+    this.setFirstName = function (name) {
+        if (name === undefined || name.length === 0 || name.match(/[^a-z]/i)){
+            console.log("Your first name enter is invalid");
+            return 0;
+        }
+        else {
+            return this.firstName = name;
+        }
+    };
+
+    this.setLastName = function (surname) {
+        if (surname === undefined || surname.length === 0 || surname.match(/[^a-z]/i)){
+            console.log("Your second name enter is invalid");
+            return 0;
+        }
+        else {
+            return this.lastName = surname;
+        }
+    };
+
     Object.defineProperties(this, {
         "firstName": {
-            set: function setFirstName (name) {
-                if (name === null || name.length === 0 || name.match(/[^a-z]/i)){
-                    console.log("Your first name enter is invalid");
-                    return 0;
-                }
-                else {
-                    return this._firstName = name;
-                }
-            },
-            get: function (){
-                return this._firstName;
-            }
+            value: this.setFirstName(name),
+            writable: false
         },
 
         "lastName": {
-            set: function setLastName (name) {
-                if (name === null || name.length === 0 || name.match(/[^a-z]/i)){
-                    console.log("Your last name enter is invalid");
-                    return 0;
-                }
-                return this._lastName = name;
-            },
-            get: function (){
-                return this._lastName;
-            }
+            value: this.setLastName(surname),
+            writable: false
         }
     });
 
     this.getLogin = function () {
-        console.log((this.firstName.charAt(0) + this.lastName).toLowerCase());
+        if (this.firstName && this.lastName) {
+            console.log((this.firstName.charAt(0) + this.lastName).toLowerCase());
+        }
+        else {
+            console.log("Cannot generate a special string. Your name or surname is not right");
+        }
     }
 }
 
-let newUser = new CreateNewUser();
-
-newUser.firstName = prompt("Enter your first name");
-newUser.lastName = prompt("Enter your last name");
+let newUser = new CreateNewUser("Andrew", "Volkov");
 
 newUser.getLogin();
