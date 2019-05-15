@@ -5,17 +5,37 @@ function CreateNewUser(name, surname) {
             return 0;
         }
         else {
-            return this.firstName = name;
+            Object.defineProperty(this, "firstName", {
+                configurable: true,
+                writable: true
+            });
+
+            this.firstName = name;
+
+            Object.defineProperty(this, "firstName", {
+                writable: false
+            });
+            return this.firstName;
         }
     };
 
     this.setLastName = function (surname) {
         if (surname === undefined || surname.length === 0 || surname.match(/[^a-z]/i)){
-            console.log("Your second name enter is invalid");
+            console.log("Your first name enter is invalid");
             return 0;
         }
         else {
-            return this.lastName = surname;
+            Object.defineProperty(this, "lastName", {
+                configurable: true,
+                writable: true
+            });
+
+            this.lastName = surname;
+
+            Object.defineProperty(this, "lastName", {
+                writable: false
+            });
+            return this.lastName;
         }
     };
 
