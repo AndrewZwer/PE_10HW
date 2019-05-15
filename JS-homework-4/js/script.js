@@ -1,21 +1,24 @@
 function CreateNewUser(name, surname) {
+    this.reWriteValue = function (newValue, property) {
+        Object.defineProperty(this, "property", {
+            configurable: true,
+            writable: true
+        });
+
+        this.property = newValue;
+
+        Object.defineProperty(this, "property", {
+            writable: false
+        });
+        return this.property;
+    };
     this.setFirstName = function (name) {
         if (name === undefined || name.length === 0 || name.match(/[^a-z]/i)){
             console.log("Your first name enter is invalid");
             return 0;
         }
         else {
-            Object.defineProperty(this, "firstName", {
-                configurable: true,
-                writable: true
-            });
-
-            this.firstName = name;
-
-            Object.defineProperty(this, "firstName", {
-                writable: false
-            });
-            return this.firstName;
+            return this.reWriteValue(name, this.firstName);
         }
     };
 
@@ -25,17 +28,7 @@ function CreateNewUser(name, surname) {
             return 0;
         }
         else {
-            Object.defineProperty(this, "lastName", {
-                configurable: true,
-                writable: true
-            });
-
-            this.lastName = surname;
-
-            Object.defineProperty(this, "lastName", {
-                writable: false
-            });
-            return this.lastName;
+            return this.reWriteValue(surname, this.lastName);
         }
     };
 
