@@ -1,17 +1,15 @@
+"use strict";
 function CreateNewUser(name, surname) {
-    this.reWriteValue = function (newValue, objectProperty, defineProperty) {
-        Object.defineProperty(this, defineProperty, {
+    this.reWriteValue = function (newValue, definedProperty) {
+        Object.defineProperty(this, definedProperty, {
             configurable: true,
             writable: true,
             value: newValue
         });
-
-        objectProperty = newValue;
-
-        Object.defineProperty(this, defineProperty, {
+        Object.defineProperty(this, definedProperty, {
+            configurable: true,
             writable: false
         });
-        return objectProperty;
     };
 
     this.setFirstName = function (name) {
@@ -20,7 +18,8 @@ function CreateNewUser(name, surname) {
             return 0;
         }
         else {
-            return this.reWriteValue(name, this.firstName, "firstName");
+            this.reWriteValue(name,"firstName");
+            return name;
         }
     };
 
@@ -30,7 +29,8 @@ function CreateNewUser(name, surname) {
             return 0;
         }
         else {
-            return this.reWriteValue(surname, this.lastName, "lastName");
+            this.reWriteValue(surname,"lastName");
+            return surname;
         }
     };
 
