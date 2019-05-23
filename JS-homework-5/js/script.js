@@ -122,4 +122,3 @@ newUser.getLogin();
 newUser.getAge();
 
 newUser.getPassword();
-
