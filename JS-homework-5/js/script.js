@@ -51,8 +51,7 @@ function CreateNewUser(name, surname) {
             return 0;
         }
         else {
-            let bindedReWriteValue = reWriteValue.bind(this, name, "firstName");
-            bindedReWriteValue(name, "firstName");
+            reWriteValue.bind(this, name, "firstName")();
             return name;
         }
     };
@@ -63,8 +62,7 @@ function CreateNewUser(name, surname) {
             return 0;
         }
         else {
-            let bindedReWriteValue = reWriteValue.bind(this, surname, "lastName");
-            bindedReWriteValue(surname, 'lastName');
+            reWriteValue.bind(this, surname, "lastName")();
             return surname;
         }
     };
