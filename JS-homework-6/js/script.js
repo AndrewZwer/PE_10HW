@@ -1,8 +1,6 @@
 let testArr = [ null, "man", 30, "22", true, 70, false, null, undefined, {} ];
-let newArr = [];
-
-function filterBy (arr, dataType) {
-    newArr = arr.filter(function (arrElement) {
+let filteredArr = function filterBy (arr, dataType) {
+    return arr.filter(function (arrElement) {
         if (arrElement === null && typeof arrElement === dataType ) {
             return true;
         }
@@ -11,7 +9,6 @@ function filterBy (arr, dataType) {
         }
         return typeof(arrElement) !== dataType;
     });
-    return newArr;
-}
+};
 
-console.log(filterBy(testArr, "undefined"));
+console.log(filteredArr(testArr, "undefined"));
