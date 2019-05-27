@@ -1,0 +1,6 @@
+.tic-tak {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid green;
+  background-color: #87d086;
+}
