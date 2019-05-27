@@ -25,16 +25,16 @@ function getCounterNumber() {
 function fibonachiNumber (num1, num2, count) {
     let result = num1 + num2;
     if (count > 1) {
-        count--;
         num1 = num2;
-        return result + fibonachiNumber(num1, num2, count);
+        num2 = result;
+        return fibonachiNumber(num1, num2, count - 1);
     }
     else {
         return result;
     }
 }
 
-if (firstNumber !== 0 && secondNumber !== 0) {
+if (!(firstNumber !== 0 && secondNumber !== 0)) {
     console.log(fibonachiNumber(firstNumber, secondNumber, counter));
 }
 else {
