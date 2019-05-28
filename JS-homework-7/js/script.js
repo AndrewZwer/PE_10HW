@@ -1,6 +1,6 @@
-let arr = ['hello', 'world', ['sub element1', 'sub element2', 'sub element3'], 'Kiev', 'Kharkiv', 'Odessa', 'Lviv'];
+let arr = ['hello', 'world', ['sub element1', 'sub element2', 'sub element3'], 'Kiev', 'Kharkiv', ['sub element1', 'sub element2', 'sub element3'],  'Odessa', 'Lviv'];
 let pageTimer = document.getElementById("timer");
-let list = document.getElementById("myList");
+let listWrapper = document.getElementById("block-for-list");
 let counter = 9;
 
 let timerIsOn = setInterval(function() {
@@ -10,25 +10,30 @@ let timerIsOn = setInterval(function() {
 
 setTimeout(function () {
     clearInterval(timerIsOn);
-    list.innerHTML = "";
+    listWrapper.innerHTML = "";
 }, 10000);
 
 function showList( array ) {
+    let newList = document.createElement("ul");
+
+    if (listWrapper.childNodes.length === 0) {
+        listWrapper.appendChild(newList);
+    }
+    else {
+        console.log(listWrapper.lastChild);
+        listWrapper.lastChild.appendChild(newList);
+    }
+
     array.map(function (value) {
+        let listItem = document.createElement("li");
+
         if(value instanceof Array) {
-            let subList = document.createElement("ul");
-            value.map(function (subValue) {
-                list.lastChild.appendChild(subList);
-                let listItem = document.createElement("li");
-                listItem.innerHTML = `${subValue}`;
-                subList.appendChild(listItem);
-            });
+            showList(array = value);
             return false;
         }
 
-        let listItem = document.createElement("li");
+        newList.appendChild(listItem);
         listItem.innerHTML = `${value}`;
-        list.appendChild(listItem);
     })
 }
 
