@@ -23,6 +23,10 @@ function getCounterNumber() {
 }
 
 function fibonachiNumber (num1, num2, count) {
+    if (num1 === 0 && num2 === 0) {
+        alert("Both of you numbers is equal 0. No number order for this zero's. Reload the page, and start again");
+        return 0;
+    }
     let result = num1 + num2;
     if (count > 1) {
         num1 = num2;
@@ -34,10 +38,5 @@ function fibonachiNumber (num1, num2, count) {
     }
 }
 
-if (!(firstNumber !== 0 && secondNumber !== 0)) {
-    console.log(fibonachiNumber(firstNumber, secondNumber, counter));
-}
-else {
-    alert("Both of you numbers is equal 0. No number order for this zero's. Reload the page, and start again");
-}
+console.log(fibonachiNumber(firstNumber, secondNumber, counter));
 
