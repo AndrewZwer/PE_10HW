@@ -13,28 +13,22 @@ setTimeout(function () {
     listWrapper.innerHTML = "";
 }, 10000);
 
-function showList( array ) {
+function showList(array) {
     let newList = document.createElement("ul");
-
-    if (listWrapper.childNodes.length === 0) {
-        listWrapper.appendChild(newList);
-    }
-    else {
-        console.log(listWrapper.lastChild);
-        listWrapper.lastChild.appendChild(newList);
-    }
-
     array.map(function (value) {
         let listItem = document.createElement("li");
-
-        if(value instanceof Array) {
-            showList(array = value);
-            return false;
-        }
-
         newList.appendChild(listItem);
-        listItem.innerHTML = `${value}`;
-    })
+        if (value instanceof Array) {
+            listItem.appendChild(showList(array = value));
+        } else {
+            listItem.innerHTML = `${value}`;
+        }
+    });
+
+    return newList
 }
 
-showList(arr);
+listWrapper.appendChild(showList(arr));
+
+
+
