@@ -16,11 +16,12 @@ function getPrice () {
     }
 
     messageWrapper.innerHTML = "";
+    priceField.style.borderColor = "";
 
     const closeCross = document.createElement("a");
     closeCross.setAttribute("id", "close-cross");
     closeCross.className = "crossBtn";
-    closeCross.innerHTML = "X";
+    closeCross.innerHTML = "x";
     resultSpan.innerHTML = `Current prise: ${this.value}`;
     resultSpan.appendChild(closeCross);
     messageWrapper.appendChild(resultSpan);
