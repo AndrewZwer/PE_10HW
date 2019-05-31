@@ -37,3 +37,11 @@ input[type=number]::-webkit-inner-spin-button {
   border: 1px solid #ada8a8;
   border-radius: 50%;
 }
+
+.correct-value {
+  background-color: green;
+}
+
+.incorrect-value {
+  border-color: red;
+}

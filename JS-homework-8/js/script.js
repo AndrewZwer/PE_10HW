@@ -3,20 +3,28 @@ let priceField = document.getElementById("price");
 let resultSpan = document.createElement("span");
 resultSpan.setAttribute("id", "priseResult");
 
+function clearMessageBlock () {
+    messageWrapper.innerHTML = "";
+}
+
 function getPrice () {
     let errorMessage = document.createElement("p");
     errorMessage.setAttribute("id", "error");
     errorMessage.innerHTML = "Please enter correct price";
 
-    if (this.value <= 0 ) {
-        messageWrapper.innerHTML = "";
-        this.style.borderColor = "red";
-        messageWrapper.appendChild(errorMessage);
+    if (this.value === "") {
+        clearMessageBlock();
         return;
     }
 
-    messageWrapper.innerHTML = "";
-    priceField.style.borderColor = "";
+    if (this.value <= 0 ) {
+        clearMessageBlock();
+        messageWrapper.appendChild(errorMessage);
+        errorMessage.classList.add("incorrect-value");
+        return;
+    }
+
+    clearMessageBlock();
 
     const closeCross = document.createElement("a");
     closeCross.setAttribute("id", "close-cross");
@@ -25,16 +33,15 @@ function getPrice () {
     resultSpan.innerHTML = `Current prise: ${this.value}`;
     resultSpan.appendChild(closeCross);
     messageWrapper.appendChild(resultSpan);
-    priceField.style.backgroundColor = "green";
+    priceField.classList.add("correct-value");
 
     closeCross.addEventListener("click", removeResult);
 }
 
 function removeResult () {
-    console.log(messageWrapper);
-    messageWrapper.innerHTML = "";
+    clearMessageBlock();
     priceField.value = "";
-    priceField.style.backgroundColor = "";
+    priceField.classList.remove("correct-value");
 }
 
 priceField.addEventListener("blur", getPrice);
