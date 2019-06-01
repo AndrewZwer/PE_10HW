@@ -5,6 +5,9 @@ resultSpan.setAttribute("id", "priseResult");
 
 function clearMessageBlock () {
     messageWrapper.innerHTML = "";
+    if (priceField.classList.contains("correct-value")) {
+        priceField.classList.remove("correct-value");
+    }
 }
 
 function getPrice () {
