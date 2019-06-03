@@ -15,26 +15,25 @@ function getPrice () {
     errorMessage.setAttribute("id", "error");
     errorMessage.innerHTML = "Please enter correct price";
 
-    switch (true) {
-        case (this.value === ""):
-            clearMessageBlock();
-            return;
-        case (this.value <= 0):
-            clearMessageBlock();
-            messageWrapper.appendChild(errorMessage);
-            errorMessage.classList.add("incorrect-value");
-            return;
-        case (this.value > 0):
-            clearMessageBlock();
-            const closeCross = document.createElement("a");
-            closeCross.setAttribute("id", "close-cross");
-            closeCross.className = "crossBtn";
-            closeCross.innerHTML = "x";
-            resultSpan.innerHTML = `Current prise: ${this.value}`;
-            resultSpan.appendChild(closeCross);
-            messageWrapper.appendChild(resultSpan);
-            priceField.classList.add("correct-value");
-            closeCross.addEventListener("click", removeResult);
+    if (this.value === "") {
+        clearMessageBlock();
+    }
+    else if (this.value <= 0) {
+        clearMessageBlock();
+        messageWrapper.appendChild(errorMessage);
+        errorMessage.classList.add("incorrect-value");
+    }
+    else if (this.value > 0) {
+        clearMessageBlock();
+        const closeCross = document.createElement("a");
+        closeCross.setAttribute("id", "close-cross");
+        closeCross.className = "crossBtn";
+        closeCross.innerHTML = "x";
+        resultSpan.innerHTML = `Current prise: ${this.value}`;
+        resultSpan.appendChild(closeCross);
+        messageWrapper.appendChild(resultSpan);
+        priceField.classList.add("correct-value");
+        closeCross.addEventListener("click", removeResult);
     }
 }
 
