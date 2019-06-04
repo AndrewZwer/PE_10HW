@@ -1,4 +1,4 @@
-const showPassBtns = document.getElementsByClassName("fas");
+const showPassBtns = document.getElementsByClassName("icon-password");
 const confirmBtn = document.getElementById("submit");
 
 
