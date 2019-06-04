@@ -1,0 +1,15 @@
+.image-to-show {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  opacity: 0;
+  transition: opacity .5s ease-in;
+}
+
+.images-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.show-image { opacity: 1; }
