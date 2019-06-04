@@ -1,9 +1,8 @@
 const showPassBtns = document.getElementsByClassName("icon-password");
 const confirmBtn = document.getElementById("submit");
 
-
 for (let i = 0; i < showPassBtns.length; i++) {
-    showPassBtns[i].addEventListener("mousedown", changeInputType);
+    showPassBtns[i].addEventListener("click", changeInputType);
 }
 
 confirmBtn.addEventListener("click", checkPass);
@@ -13,19 +12,14 @@ function changeInputType() {
     switch (inputSibling.type) {
         case "text":
             inputSibling.type = "password";
+            this.classList.remove("fa-eye-slash");
+            this.classList.add("fa-eye");
             break;
         case "password":
             inputSibling.type = "text";
+            this.classList.remove("fa-eye");
+            this.classList.add("fa-eye-slash");
             break;
-    }
-
-    if(this.classList.contains("fa-eye")) {
-        this.classList.remove("fa-eye");
-        this.classList.add("fa-eye-slash");
-    }
-    else {
-        this.classList.remove("fa-eye-slash");
-        this.classList.add("fa-eye");
     }
 }
 
@@ -49,11 +43,11 @@ function checkPass(event) {
     }
     else {
         clearError();
-        errorSection.innerHTML = "<p class='error'>Нужно ввести одинаковые значения</p>";
+        errorSection.innerText = "Нужно ввести одинаковые значения";
     }
 
     function clearError() {
-        errorSection.innerHTML = "";
+        errorSection.innerText = "";
     }
 }
 
