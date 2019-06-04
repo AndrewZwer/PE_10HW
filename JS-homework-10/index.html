@@ -25,8 +25,13 @@
     <input id="confirmPassword" type="password" autocomplete="password"/>
     <i class="fas fa-eye icon-password"></i>
   </label>
-  <button type="submit" class="btn">Подтвердить</button>
+  <div id="error-block"></div>
+  <button id="submit" type="submit" class="btn">Подтвердить</button>
 </form>
+<div id="modal" class="modal">
+  <i id="closeModal" class="fas fa-times"></i>
+  <p>You are welcome</p>
+</div>
 <script src="js/script.js"></script>
 </body>
 </html>

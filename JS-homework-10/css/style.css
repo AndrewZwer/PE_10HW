@@ -22,11 +22,40 @@
   color: grey;
 }
 
-.btn{
-  width: 150px;
-}
+.btn{ width: 150px; }
 
 .fa-eye,
 .fa-eye-slash {
   cursor: pointer;
+}
+
+.modal {
+  position: absolute;
+  display: none;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 30px;
+  color: green;
+  padding: 20px 30px;
+  border: 5px solid green;
+}
+
+.modal-active { display: block; }
+
+.fas {
+  position: absolute;
+  cursor: pointer;
+  top: 15px;
+  right: 15px;
+  transition: all 1s;
+}
+
+.fas:hover { color: black; }
+
+.active-modal { display: block; }
+
+.error {
+  color: red;
+  font-size: 20px;
 }
