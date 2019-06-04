@@ -27,13 +27,11 @@ function showImg(){
 
         const imageList = document.getElementsByClassName("image-to-show");
         document.getElementsByClassName("show-image")[0].classList.remove("show-image");
-        // imageList[imageCounter].classList.remove("show-image");
         imageCounter++;
         imageList[imageCounter].classList.add("show-image");
         if (imageCounter === 3) {
             imageCounter = 0;
         }
-
     }, 10000);
 
     continueShowImgBtn.addEventListener("click", function () {
