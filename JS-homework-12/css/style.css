@@ -13,3 +13,5 @@
 }
 
 .show-image { opacity: 1; }
+
+.hidden-btn { display: none; }

@@ -1,12 +1,14 @@
 let imageCounter = 0;
 let secondsLeft = 10;
+const stopShowImgBtn = document.getElementById("stopShowImg");
+const continueShowImgBtn = document.getElementById("continueShowImg");
+const timerBlock = document.getElementById("timer");
 
 showImg();
 
 function showImg(){
-    const stopShowImgBtn = document.getElementById("stopShowImg");
-    const continueShowImgBtn = document.getElementById("continueShowImg");
-    const timerBlock = document.getElementById("timer");
+    stopShowImgBtn.classList.remove("hidden-btn");
+    continueShowImgBtn.classList.add("hidden-btn");
 
     let timerOnTop = setInterval(function () {
         secondsLeft -= 0.1;
@@ -16,15 +18,7 @@ function showImg(){
         }
     }, 100);
 
-    stopShowImgBtn.addEventListener("click", function () {
-        clearInterval(startImgShow);
-        clearInterval(timerOnTop);
-        timerBlock.innerHTML = "";
-        secondsLeft = 10;
-    });
-
     let startImgShow = setInterval(function () {
-
         const imageList = document.getElementsByClassName("image-to-show");
         document.getElementsByClassName("show-image")[0].classList.remove("show-image");
         imageCounter++;
@@ -34,8 +28,14 @@ function showImg(){
         }
     }, 10000);
 
-    continueShowImgBtn.addEventListener("click", function () {
-        showImg();
+    stopShowImgBtn.addEventListener("click", function () {
+        stopShowImgBtn.classList.add("hidden-btn");
+        continueShowImgBtn.classList.remove("hidden-btn");
+        clearInterval(startImgShow);
+        clearInterval(timerOnTop);
+        timerBlock.innerHTML = "";
+        secondsLeft = 10;
+        continueShowImgBtn.addEventListener("click", showImg);
     });
 }
 
