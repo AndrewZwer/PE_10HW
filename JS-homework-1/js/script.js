@@ -1,10 +1,10 @@
 let name = prompt("What is your name?"),
     age = Number(prompt("How old are you?"));
 
-do {
+while (name === null || name.length === 0 || age === 0 || isNaN(age)) {
     	name = prompt("What is your name?", name);
     	age = Number(prompt("How old are you?", age));
-} while (name === null || name.length === 0 || age === 0 || isNaN(age) );
+}
 
 if (age < 18) {
     alert("You are not allowed to visit this website");

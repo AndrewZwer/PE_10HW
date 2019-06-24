@@ -150,9 +150,8 @@
     content: "";
     width: 100vw;
     height: 100vh;
-    background-position: center;
+    background: no-repeat center;
     background-size: cover;
-    background-repeat: no-repeat;
     position: absolute;
     transform: translateZ(-1px) scale(2);
 }
@@ -165,7 +164,8 @@
 
 .header-black-out > .flexed {
     justify-content: space-between;
-    height: 121px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .hexagon {
@@ -438,7 +438,12 @@
 
 /* Call to action block */
 
-.call-to-action::before { background-image: url(../img/bg/call-to-action-bg.jpg); }
+.call-to-action {
+    background-image: url(../img/bg/call-to-action-bg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 .call-to-action-blackout { background-color: rgba(0, 0, 0, .8); }
 
@@ -549,7 +554,7 @@
 
 .gallery-hidden-block .fa-search {
     font-size: 12px;
-    color: #fff;
+    color: #18cfab;
 }
 
 .transparent-btn {
@@ -558,7 +563,7 @@
     margin-right: 3px;
 }
 
-.transparent-btn:hover {
+.gallery-btn:hover {
     color: #fff;
     background-color: #18cfab;
 }
@@ -566,13 +571,7 @@
 .colorfull-btn {
     padding: 14px 13px 12px;
     height: 12px;
-    background-color: #18cfab;
     margin-left: 2px;
-}
-
-.colorfull-btn:hover {
-    color: #18cfab;
-    background-color: #fff;
 }
 
 .img-heading {
@@ -594,6 +593,7 @@
     font-size: 14px;
     text-transform: uppercase;
     text-decoration: none;
+    outline: none;
     padding: 25px 21px;
     border-radius: 4px;
     margin-bottom: 100px;
@@ -704,7 +704,12 @@
 
 /* Comments */
 
-.comments:before { background-image: url("../img/bg/comments-bg.jpg"); }
+.comments {
+    background-image: url("../img/bg/comments-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 
 .comments .container {
     flex-direction: column;
@@ -803,6 +808,10 @@
 
 .miniature-nav { margin-bottom: 100px; }
 
+.disabled-arrow {
+    pointer-events: none;
+}
+
 /* Gallery of the best images */
 
 .best-images { background-color: #fff; }
@@ -891,5 +900,29 @@
 /* Loader */
 
 
+.loader {
+    text-align: center;
+    letter-spacing: 10px;
+    font-family: "Montserrat-Regular", sans-serif;
+    display: none;
+    margin-bottom: 30px;
+}
 
+.best-images .loader { margin-bottom: 60px; }
 
+.loader span {
+    display: inline-block;
+}
+
+.up-and-down {
+    animation: letterUp 200ms infinite linear;
+}
+
+@keyframes letterUp {
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}

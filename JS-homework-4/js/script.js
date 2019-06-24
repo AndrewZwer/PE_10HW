@@ -59,3 +59,7 @@ function CreateNewUser(name, surname) {
 let newUser = new CreateNewUser("Andrew", "Volkov");
 
 newUser.getLogin();
+
+for(let key in newUser){
+    console.log(newUser[key] - key);
+}
